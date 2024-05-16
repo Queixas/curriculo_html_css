@@ -1,0 +1,211 @@
+:root{
+    --color1: #EF3340;
+    --color2: #C33C76;
+    --color3: #D19CCB;
+    --color4: #8E4ABC;
+    --color5: #6651EC;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 1280px;
+ 
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1em;
+    overflow-x: hidden;
+}
+.topo{
+    min-height: 10vh;
+    background:linear-gradient(--color1,--color2,--color3,--color4,--color5);
+    width: 1260px;
+    align-items:center;
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+.change-themeBTN, .change-languageBTN{
+    position: absolute; left: 1200px;
+    overflow:hidden;
+    display: inline;
+}
+
+.menu{
+    font-size: 2em;
+    font-style: italic;
+    font-weight: bold;
+    color: #fff;
+
+    list-style: none;
+    background-color: var(--light_color);
+    position:relative;
+    left: 47%;
+}
+
+.menu li{
+    position: relative;
+    float: left;
+}
+
+.menu li a{
+    text-decoration: none;
+    margin-top:15px;
+    display:block;
+}
+
+.menu li ul{
+    position: absolute;
+    top:100%;
+    left:0px;
+    display:none;
+    background-color: rgba(255, 255, 255, 0.688);
+}
+/* fazendo com que menu apareça */
+.menu li:hover ul, .menu li.over ul{
+    display:block;
+}
+.menu li a:hover{   
+    background:#333;
+    padding: 10px;
+    color:#fff;
+    text-shadow:0px 0px 5px #fff;
+}
+.menu li ul li{
+    display:block;
+    width:210px;
+    top:30px;
+    text-align: center;
+    text-wrap:pretty;
+}
+img{
+    max-width: 1280px;
+}
+/* foto redonda + nome*/
+.foto{
+    margin-bottom: 80px;
+}
+.foto h3{
+    font-size: 1.5em;
+    display: block;
+    position: relative;
+    top: 70px;
+    left: 10px;
+
+}
+.foto img{
+    width: 150px;
+    position: absolute;
+    top:320px;
+    background-color: white;
+    border-radius: 50%;
+}
+.foto ul li{
+    list-style-type:none;
+    display: inline-block;
+    position:relative;
+    top: 80px; left: 10px;
+}
+.foto ul li a i{
+    width: 50px;
+    color: var(--color5);
+}
+.foto ul li a i:hover{
+    size: 3em;
+    color: var(--color2);
+}
+
+/* briefing */
+.briefing{
+    border: 1px black solid;
+    width: 45%;
+    text-align: center;
+    position: relative;
+    left:28%;
+    bottom: 7%;
+}
+.briefing h3{
+    margin-bottom: 1em;
+    padding-top: 5px;
+}
+/*quadrados*/
+.experiencia,.sobremim{
+    border: 1px black solid;
+    border-radius: 10%;
+}
+.quadrados{
+    display: flex;
+    flex-direction: row;
+}
+.experiencia, .sobremim{
+    padding: 2em;
+    text-align: center;
+}
+.experiencia h3, .sobremim h3{
+    margin-bottom: 5rem;
+
+}
+
+/* containers */
+container{
+    width: fit-content;
+
+}
+abbr{
+    text-decoration: none;
+}
+container h1, container h2, container h3, container h4{
+    text-align: center;
+    text-decoration: none;
+}
+container h1{
+    margin-top: 2em;
+}
+
+container img{
+    width:640px;
+    height: 500px;
+    image-rendering: optimizeQuality;
+    image-resolution: 500px;
+    position: relative;
+    left: 25%;
+}
+
+container ul{
+    list-style-position: inside;
+    width: fit-content;
+    height: 2em;
+    display: flex;
+    text-align: center;
+}
+container ul li{
+    padding: 5em;
+}
+
+
+
+
+
+
+/*certificados dm*/
+.certificadosdm{
+    
+    width: 1200px;
+    height: 36rem;
+    position:relative;
+    display: flex;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+}
+.certificadosdm img{
+    height: 1000px;
+    position: sticky;
+    left: 10%;
+    flex-shrink: 0;
+    object-fit: cover;
+    scroll-behavior:auto;
+}
+#demolayimg{
+    position: static;
+    display: block;
+    align-self: center;
+}
