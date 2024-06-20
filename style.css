@@ -1,211 +1,420 @@
-:root{
-    --color1: #EF3340;
-    --color2: #C33C76;
-    --color3: #D19CCB;
-    --color4: #8E4ABC;
-    --color5: #6651EC;
+:root {
+    --darkbg: #333333;
+    --darktitle: white;
+    --darktext: #d5ccc7;
+    --darktextBG: #a9a29cbf;
+    --lightbg: #ffffff;
+    --lighttitle: #cc3f0c;
+    --lighttext: #9a6d38;
+}
+html{
+    background-color: var(--darktextBG);
 }
 
-body{
+html, body {
     margin: 0;
     padding: 0;
-    width: 1280px;
- 
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    text-align: center; /* Centraliza todo o texto no site */
+}
+
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: var(--lightbg); /* Cor de fundo padrão */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1em;
+    color: var(--lighttext);
     overflow-x: hidden;
 }
-.topo{
-    min-height: 10vh;
-    background:linear-gradient(--color1,--color2,--color3,--color4,--color5);
-    width: 1260px;
-    align-items:center;
-    display: block;
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--lighttext);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    border: 3px solid grey;
+}
+
+/* Header and Navigation */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    background-color: var(--lightbg);
+    color: var(--lightbg);
     padding: 10px;
 }
-.change-themeBTN, .change-languageBTN{
-    position: absolute; left: 1200px;
-    overflow:hidden;
+
+.topo {
+    height: 10vh;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botoestopo {
+    position: absolute;
+    right: 20px;
     display: inline;
 }
 
-.menu{
+i {
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #63b79f;
+}
+
+i:hover {
+    transform: scale(1.1);
+    color: #6651EC;
+}
+
+.menu {
     font-size: 2em;
     font-style: italic;
     font-weight: bold;
-    color: #fff;
-
     list-style: none;
-    background-color: var(--light_color);
-    position:relative;
-    left: 47%;
-}
-
-.menu li{
-    position: relative;
-    float: left;
-}
-
-.menu li a{
-    text-decoration: none;
-    margin-top:15px;
-    display:block;
-}
-
-.menu li ul{
-    position: absolute;
-    top:100%;
-    left:0px;
-    display:none;
-    background-color: rgba(255, 255, 255, 0.688);
-}
-/* fazendo com que menu apareça */
-.menu li:hover ul, .menu li.over ul{
-    display:block;
-}
-.menu li a:hover{   
-    background:#333;
-    padding: 10px;
-    color:#fff;
-    text-shadow:0px 0px 5px #fff;
-}
-.menu li ul li{
-    display:block;
-    width:210px;
-    top:30px;
-    text-align: center;
-    text-wrap:pretty;
-}
-img{
-    max-width: 1280px;
-}
-/* foto redonda + nome*/
-.foto{
-    margin-bottom: 80px;
-}
-.foto h3{
-    font-size: 1.5em;
-    display: block;
-    position: relative;
-    top: 70px;
-    left: 10px;
-
-}
-.foto img{
-    width: 150px;
-    position: absolute;
-    top:320px;
-    background-color: white;
-    border-radius: 50%;
-}
-.foto ul li{
-    list-style-type:none;
-    display: inline-block;
-    position:relative;
-    top: 80px; left: 10px;
-}
-.foto ul li a i{
-    width: 50px;
-    color: var(--color5);
-}
-.foto ul li a i:hover{
-    size: 3em;
-    color: var(--color2);
-}
-
-/* briefing */
-.briefing{
-    border: 1px black solid;
-    width: 45%;
-    text-align: center;
-    position: relative;
-    left:28%;
-    bottom: 7%;
-}
-.briefing h3{
-    margin-bottom: 1em;
-    padding-top: 5px;
-}
-/*quadrados*/
-.experiencia,.sobremim{
-    border: 1px black solid;
-    border-radius: 10%;
-}
-.quadrados{
     display: flex;
-    flex-direction: row;
+    background-color: var(--light_color);
+    justify-content: center;
 }
-.experiencia, .sobremim{
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.menu li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color:var(--darktextBG);
+}
+
+.menu li:hover ul, .menu li.over ul {
+    display: block;
+}
+
+.menu li a:hover {
+    background: #333;
+    padding: 10px;
+    color: #fff;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.menu li ul li {
+    display: block;
+    width: 210px;
+    text-align: center;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.foto {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.foto h1 {
+    font-size: 2em;
+    color: var(--lighttitle);
+}
+
+.foto img {
+    width: 150px;
+    border-radius: 50%;
+    background-color:var(--lightbg);
+}
+
+.foto ul {
+    padding: 0;
+}
+
+.foto ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.foto ul li a i {
+    color: var(--lighttext);
+}
+
+.foto ul li a i:hover {
+    transform: scale(1.3);
+    color: var(--lighttitle);
+}
+
+/* Briefing */
+.briefing {
+    border: 1px solid black;
+    width: 90%;
+    max-width: 650px;
+    text-align: center;
+    margin: 0 auto 50px;
+    padding: 10px;
+    background-color: var(--lightbg);
+    color: var(--lighttext);
+}
+
+/* Experience and About Me Sections */
+.experiencia,
+.sobremim {
+    border: 1px solid black;
+    border-radius: 10px;
     padding: 2em;
+    margin: 50px auto;
     text-align: center;
+    background-color: var(--lightbg);
+    color: var(--lighttext);
+    width: 90%;
+    max-width: 800px;
 }
-.experiencia h3, .sobremim h3{
-    margin-bottom: 5rem;
 
+/* Containers */
+container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 20px;
 }
 
-/* containers */
-container{
-    width: fit-content;
-
-}
-abbr{
+abbr {
     text-decoration: none;
 }
-container h1, container h2, container h3, container h4{
+
+container h1,
+container h2,
+container h3,
+container h4 {
     text-align: center;
-    text-decoration: none;
 }
-container h1{
+
+container h1 {
+    margin-top: 2em;
+    padding: 1em;
+    color: white;
+    font-family: fantasy;
+    font-weight: 400;
+    font-size: 3em;
+    letter-spacing: 4px;
+    background: var(--darktextBG);
+    border-radius: 10px;
+}
+
+container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
     margin-top: 2em;
 }
 
-container img{
-    width:640px;
-    height: 500px;
-    image-rendering: optimizeQuality;
-    image-resolution: 500px;
-    position: relative;
-    left: 25%;
+container ul {
+    list-style-position: outside;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
 }
 
-container ul{
-    list-style-position: inside;
-    width: fit-content;
-    height: 2em;
-    display: flex;
-    text-align: center;
-}
-container ul li{
-    padding: 5em;
+.IMG {
+    display: block;
+    padding: 50px;
+    margin: auto;
 }
 
-
-
-
-
-
-/*certificados dm*/
-.certificadosdm{
-    
-    width: 1200px;
+/* DeMolay Certificates */
+.certificadosdm {
+    width: 90%;
+    max-width: 1200px;
     height: 36rem;
-    position:relative;
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    background-color: var(--lightbg);
+    color: var(--lighttext);
+    margin: 0 auto;
 }
-.certificadosdm img{
-    height: 1000px;
-    position: sticky;
-    left: 10%;
+
+.certificadosdm img {
     flex-shrink: 0;
     object-fit: cover;
-    scroll-behavior:auto;
+    margin-right: 10px;
 }
-#demolayimg{
-    position: static;
-    display: block;
-    align-self: center;
+
+.certificadosdm::-webkit-scrollbar {
+    width: 12px;
+}
+
+.certificadosdm::-webkit-scrollbar-track {
+    background: rgba(128, 128, 128, 0.10);
+}
+
+.certificadosdm::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    border: 3px solid grey;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--lightbg);
+    color: var(--lighttext);
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+/* Footer */
+footer {
+    background-color: gray;
+    padding: 20px;
+    text-align: center;
+    color: var(--lighttext);
+}
+
+footer nav {
+    display: inline-block;
+}
+
+footer h2 {
+    margin: 10px 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer li a {
+    text-decoration: none;
+}
+
+/* Dark Mode Toggle */
+input[type="checkbox"] {
+    display: none;
+}
+
+.dark,
+.dark header {
+    background-color: var(--darkbg);
+    color: var(--darktitle);
+    text-align: center; /* Centraliza todo o texto no site */
+}
+
+.dark body {
+    background-color: var(--darkbg);
+    color: var(--darktext);
+    text-align: center; /* Centraliza todo o texto no site */
+}
+
+.dark .briefing,
+.dark .experiencia,
+.dark .sobremim,
+.dark .certificadosdm,
+.dark table,
+.dark footer {
+    background-color: var(--darkbg);
+    color: var(--darktext);
+    text-align: center; /* Centraliza todo o texto no site */
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu li ul {
+        position: static;
+        display: none;
+        background-color: transparent;
+    }
+
+    .menu li:hover ul,
+    .menu li.over ul {
+        display: block;
+    }
+
+    .menu li a {
+        margin: 0;
+    }
+
+    .foto h1 {
+        font-size: 1.5em;
+    }
+
+    .foto img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .briefing,
+    .experiencia,
+    .sobremim {
+        margin: 20px auto;
+        padding: 1em;
+    }
+
+    container h1 {
+        font-size: 2em;
+    }
+
+    container img {
+        width: 100%;
+    }
+
+    container ul {
+        width: 100%;
+        padding: 0;
+    }
+
+    .certificadosdm {
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
+
+    .certificadosdm img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
 }
